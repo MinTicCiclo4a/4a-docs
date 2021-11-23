@@ -14,12 +14,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, password):
+    def create_superuser(self, document, password):
         """
         Creates and saves a superuser with the given username and password.
         """
         user = self.create_user(
-            username=username,
+            username=document,
             password=password,
         )
         user.is_admin = True
@@ -27,14 +27,15 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-    document = models.IntegerField(primary_key=True)
+    id= models.BigAutoField(primary_key=True)
+    document = models.IntegerField (unique=True)
     name = models.CharField( max_length = 30)
     last_name= models.CharField( max_length = 30)
     password = models.CharField(max_length = 256)
     email = models.EmailField( max_length = 100)
     phone=models.IntegerField
     date_of_birth= models.DateField ()
-    address=models.CharField( max_length = 30)
+    address=models.TextField()
     city=models.CharField( max_length = 30)
 
     def save(self, **kwargs):
