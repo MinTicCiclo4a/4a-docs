@@ -1,7 +1,7 @@
 FROM  python:3
 ENV PYTHONUNBUFFERED 1
-RUN mkdir / users
-WORKDIR / users
+RUN mkdir /users
+WORKDIR /users
 ADD . /users/
 RUN pip install -r requirements.txt
 EXPOSE 8080
