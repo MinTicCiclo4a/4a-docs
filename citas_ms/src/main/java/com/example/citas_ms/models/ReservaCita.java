@@ -1,40 +1,40 @@
-package com.misiontic.citas_ms.models;
+package com.example.citas_ms.models;
 
-import nonapi.io.github.classgraph.json.Id;
+
+import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
 public class ReservaCita {
-
     @Id
     private String idReserva;
-    private long idPaciente;
+    private String document;
     private String especialidadCita;
     private String especialistaCita;
     private Date diaCita;
 
-    public ReservaCita(String idReserva, long idPaciente, String especialidadCita, String especialistaCita, Date diaCita) {
+    public ReservaCita(String idReserva, String document, String especialidadCita, String especialistaCita, Date diaCita) {
         this.idReserva = idReserva;
-        this.idPaciente = idPaciente;
+        this.document = document;
         this.especialidadCita = especialidadCita;
         this.especialistaCita = especialistaCita;
         this.diaCita = diaCita;
     }
 
     public String getIdReserva() {
-        return idReserva;
+       return idReserva;
     }
 
     public void setIdReserva(String idReserva) {
         this.idReserva = idReserva;
     }
 
-    public long getIdPaciente() {
-        return idPaciente;
+    public String getDocument() {
+        return document;
     }
 
-    public void setIdPaciente(long idPaciente) {
-        this.idPaciente = idPaciente;
+    public void setDocument(String document) {
+        this.document = document;
     }
 
     public String getEspecialidadCita() {
@@ -61,3 +61,5 @@ public class ReservaCita {
         this.diaCita = diaCita;
     }
 }
+
+

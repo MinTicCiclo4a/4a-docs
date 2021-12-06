@@ -1,4 +1,4 @@
-package com.misiontic.citas_ms.exceptions;
+package com.example.citas_ms.exceptions;
 
 public class ReservaCitaNotFoundException extends RuntimeException {
     public ReservaCitaNotFoundException(String message) {
