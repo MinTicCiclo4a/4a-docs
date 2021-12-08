@@ -29,14 +29,15 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     id= models.BigAutoField(primary_key=True)
     document = models.IntegerField (unique=True)
-    name = models.CharField( max_length = 30)
-    last_name= models.CharField( max_length = 30)
     password = models.CharField(max_length = 256)
+    name = models.CharField( max_length = 30)
     email = models.EmailField( max_length = 100)
-    phone=models.IntegerField
-    date_of_birth= models.DateField ()
-    address=models.TextField()
-    city=models.CharField( max_length = 30)
+    
+    #last_name= models.CharField( max_length = 30)
+    #phone=models.IntegerField
+    #date_of_birth= models.DateField ()
+    #address=models.TextField()
+    #city=models.CharField( max_length = 30)
 
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN' 
