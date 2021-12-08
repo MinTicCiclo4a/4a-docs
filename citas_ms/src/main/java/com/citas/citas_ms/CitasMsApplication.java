@@ -1,4 +1,4 @@
-package com.example.citas_ms;
+package com.citas.citas_ms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
