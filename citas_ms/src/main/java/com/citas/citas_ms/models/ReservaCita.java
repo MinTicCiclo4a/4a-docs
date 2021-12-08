@@ -1,40 +1,40 @@
-package com.example.citas_ms.models;
-
+package com.citas.citas_ms.models;
 
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
 public class ReservaCita {
+
     @Id
-    private String idReserva;
-    private String document;
+    private String id;
+    private String documentPersona;
     private String especialidadCita;
     private String especialistaCita;
     private Date diaCita;
 
-    public ReservaCita(String idReserva, String document, String especialidadCita, String especialistaCita, Date diaCita) {
-        this.idReserva = idReserva;
-        this.document = document;
+    public ReservaCita(String id, String documentPersona, String especialidadCita, String especialistaCita, Date diaCita) {
+        this.id = id;
+        this.documentPersona = documentPersona;
         this.especialidadCita = especialidadCita;
         this.especialistaCita = especialistaCita;
         this.diaCita = diaCita;
     }
 
-    public String getIdReserva() {
-       return idReserva;
+    public String getId() {
+        return id;
     }
 
-    public void setIdReserva(String idReserva) {
-        this.idReserva = idReserva;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getDocument() {
-        return document;
+    public String getDocumentPersona() {
+        return documentPersona;
     }
 
-    public void setDocument(String document) {
-        this.document = document;
+    public void setDocumentPersona(String documentPersona) {
+        this.documentPersona = documentPersona;
     }
 
     public String getEspecialidadCita() {
@@ -61,5 +61,3 @@ public class ReservaCita {
         this.diaCita = diaCita;
     }
 }
-
-

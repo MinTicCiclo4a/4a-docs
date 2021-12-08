@@ -1,4 +1,4 @@
-package com.example.citas_ms;
+package com.citas.citas_ms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
