@@ -9,7 +9,7 @@ const usersResolver = {
   },
   Mutation: {
     signUpUser: async (_, { userInput }, { dataSources }) => {
-      const citasInput = {
+      const authInput = {
         document: userInput.document,
         name: userInput.name,
         last_name: userInput.last_name,
@@ -20,9 +20,9 @@ const usersResolver = {
         address: userInput.address,
         city: userInput.city,
       };
-      
-     return await dataSources.authAPI.createUser(citasInput);
+      return await dataSources.authAPI.createUser(authInput);
     },
+  
     logIn: (_, { credentials }, { dataSources }) =>
       dataSources.authAPI.authRequest(credentials),
     refreshToken: (_, { refresh }, { dataSources }) =>

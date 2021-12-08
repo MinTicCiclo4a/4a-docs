@@ -8,6 +8,8 @@ const citasResolver = {
     },
   },
 
-  Mutation: {},
+  
+  
+
 };
 module.exports = citasResolver ;
