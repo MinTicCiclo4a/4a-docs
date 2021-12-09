@@ -9,16 +9,21 @@ const usersResolver = {
   },
   Mutation: {
     signUpUser: async (_, { userInput }, { dataSources }) => {
-      const authInput = {
+      const personaInput = {
         document: userInput.document,
-        name: userInput.name,
-        last_name: userInput.last_name,
-        password: userInput.password,
-        email: userInput.email,
         phone: userInput.phone,
         date_of_birth: userInput.date_of_birth,
         address: userInput.address,
         city: userInput.city,
+        
+      }
+      await dataSources.citasAPI.createPersona(personaInput);
+      
+      const authInput = {
+        document: userInput.document,
+        password: userInput.password,
+        name: userInput.name,
+        email: userInput.email,
       };
       return await dataSources.authAPI.createUser(authInput);
     },

@@ -4,6 +4,7 @@ const resolvers = require("./resolvers");
 const CitasAPI = require("./dataSources/citas_api");
 const AuthAPI = require("./dataSources/auth_api");
 const authentication = require("./utils/authentication");
+
 const server = new ApolloServer({
   context: authentication,
   typeDefs,
