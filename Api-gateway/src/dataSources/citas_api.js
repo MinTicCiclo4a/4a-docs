@@ -1,17 +1,31 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
+
 const serverConfig = require("../server");
+
 class CitasAPI extends RESTDataSource {
+  
   constructor() {
     super();
     this.baseURL = serverConfig.citas_api_url;
   }
-  async createCita(reservaCitas) {
-    reservaCitas = new Object(JSON.parse(JSON.stringify(reservaCitas)));
+  async createPersona(persona) {
+    persona = new Object(JSON.parse(JSON.stringify(persona)));
 
-    return await this.post("/reservaCitas", reservaCitas);
+    return await this.post("/Personas", persona);
   }
-  async citaByid(idReserva) {
-    return await this.get(`/reservaCitas/${idReserva}`);
+
+  async personaByDocument(document) {
+    return await this.get(`/Personas/${document}`);
+     }
+
+  async createReservaCita(reservaCita) {
+    reservaCita = new Object(JSON.parse(JSON.stringify(reservaCita)));
+
+    return await this.post("/reservaCitas", reservaCita);
+  }
+
+  async reservaCitaByDocument(document) {
+    return await this.get(`/reservaCitas/${document}`);
   }
 
   

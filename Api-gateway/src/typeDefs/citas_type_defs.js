@@ -1,16 +1,25 @@
 const { gql } = require("apollo-server");
-const citaTypeDefs = gql`
-  type Cita {
-     
-    document: String!
+
+const reservaCitaTypeDefs = gql`
+  type ReservaCita {
+    id: String!
+    documentPersona: String!
     especialidadCita: String!
     especialistaCita: String!
     diaCita: String!
 
   }
-
+  input ReservaCitaInput {
+    documentPersona: String!
+    especialidadCita: String!
+    especialistaCita: String!
+    diaCita: String!
+  }
   extend type Query {
-    citaByid(document: String!): Cita
+    reservaCitaByDocument(document: String!): [ReservaCita]
+  }
+  extend type Mutation {
+    createReservaCita(reservaCita: ReservaCitaInput!): ReservaCita
   }
 `;
-module.exports = citaTypeDefs;
+module.exports = reservaCitaTypeDefs;
