@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { createRouter, createWebHistory } from "vue-router";
-import { ApolloClient, createHttpLink, InMemoryCache,} from "@apollo/client/core";
+import { ApolloClient, createHttpLink, InMemoryCache,} from "@apollo/client/core"
 /*import App from "./App.vue";*/
 
 import LogIn from "./components/LogIn.vue";
